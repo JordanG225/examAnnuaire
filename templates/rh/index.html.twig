@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RH index{% endblock %}
+
+{% block body %}
+    <h1>RH index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Photo</th>
+                <th>TypeContrat</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for r_h in r_hs %}
+            <tr>
+                <td>{{ r_h.id }}</td>
+                <td>{{ r_h.nom }}</td>
+                <td>{{ r_h.prenom }}</td>
+                <td>{{ r_h.photo }}</td>
+                <td>{{ r_h.typeContrat }}</td>
+                <td>
+                    <a href="{{ path('r_h_show', {'id': r_h.id}) }}">show</a>
+                    <a href="{{ path('r_h_edit', {'id': r_h.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('r_h_new') }}">Create new</a>
+{% endblock %}

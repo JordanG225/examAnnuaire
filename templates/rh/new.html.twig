@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New RH{% endblock %}
+
+{% block body %}
+    <h1>Creer un nouveau compte !</h1>
+    <div class="row col-md-6 m-auto">
+
+    <div class="row col-md-6 m-auto">
+    {{ include('r_h/_form.html.twig') }}
+    </div>
+
+    <a href="{{ path('r_h_index') }}">back to list</a>
+    </div>
+
+{% endblock %}

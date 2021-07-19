@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}RH{% endblock %}
+
+{% block body %}
+    <h1>RH</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ r_h.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ r_h.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ r_h.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ r_h.photo }}</td>
+            </tr>
+            <tr>
+                <th>TypeContrat</th>
+                <td>{{ r_h.typeContrat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('r_h_index') }}">back to list</a>
+
+    <a href="{{ path('r_h_edit', {'id': r_h.id}) }}">edit</a>
+
+    {{ include('r_h/_delete_form.html.twig') }}
+{% endblock %}
